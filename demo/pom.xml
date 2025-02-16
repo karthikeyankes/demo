@@ -27,6 +27,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+		<sampleproperties></sampleproperties>
 	
    <timestamp>${maven.build.timestamp}</timestamp>
    <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
@@ -62,7 +63,7 @@
 	<build>
 		<resources>
         <resource>
-            <directory>src/main/resources</directory>
+            <directory>${project.properties.samplepropeties}</directory>
             <filtering>true</filtering>
         </resource>
     </resources>
@@ -80,30 +81,7 @@
         </configuration>
       </plugin>
 		
-		  <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-            <execution>
-                <id>copy-properties</id>
-                <phase>compile</phase>
-                <goals>
-                    <goal>copy-resources</goal>
-                </goals>
-                <configuration>
-                    <outputDirectory>${project.build.outputDirectory}</outputDirectory>
-                    <resources>
-                        <resource>
-                            <directory>src/main/resources/prod</directory>
-                            <includes>
-                                <include>application.properties</include>
-                            </includes>
-                        </resource>
-                    </resources>
-                    <overwrite>true</overwrite>
-                </configuration>
-            </execution>
-        </executions>
-    </plugin>
+		  
     </plugins>
 	</build>
 
