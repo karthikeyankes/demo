@@ -9,6 +9,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@ConfigurationProperties(prefix = "sample")
+@Configuration("application")
+
 @SpringBootApplication
 public class DemoApplication {
 
